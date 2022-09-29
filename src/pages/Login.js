@@ -13,7 +13,7 @@ class Login extends React.Component {
 
   handleChange = ({ target }) => {
     const { name, value } = target;
-    this.state({ [name]: value }, () => this.handleVerify());
+    this.setState({ [name]: value }, () => this.handleVerify());
   };
 
   handleVerify = () => {
