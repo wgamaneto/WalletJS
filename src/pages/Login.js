@@ -1,4 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import { getEmail } from '../redux/actions';
 
 class Login extends React.Component {
   state = {
@@ -28,11 +32,12 @@ class Login extends React.Component {
   handleClick = () => {
     const { history, dispatch } = this.props;
     const { email } = this.state;
-    dispatch(emailHandler(email));
+    dispatch(getEmail(email));
     history.push('/carteira');
   };
 
   render() {
+    const { disableBtn } = this.state;
     return (
       <form>
         <input
