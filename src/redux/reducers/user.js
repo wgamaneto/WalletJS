@@ -9,7 +9,7 @@ const user = (state = INITIAL_STATE, action) => {
   case USER_EMAIL:
     return {
       ...state,
-      email: action.email,
+      email: action.payload,
     };
   default:
     return state;
