@@ -57,7 +57,7 @@ export function apiCotation(param) {
       const response = await fetch(url);
       const data = await response.json();
       const total = data[param.currency].ask * param.value;
-      dispatch(getWalletForm({ ...param, exchangeRates: data }));
+      dispatch(userWallet({ ...param, exchangeRates: data }));
       dispatch(getTotal(total));
     } catch (error) {
       dispatch(failedRequest(error.message));
