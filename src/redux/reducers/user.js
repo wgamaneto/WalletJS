@@ -3,6 +3,7 @@ import { USER_EMAIL, USER_TOTAL } from '../actions';
 
 const INITIAL_STATE = {
   email: '',
+  total: 0,
 };
 const user = (state = INITIAL_STATE, action) => {
   switch (action.type) {
