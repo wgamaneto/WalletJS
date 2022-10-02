@@ -5,6 +5,8 @@ export const FORM_CURRENCY = 'FORM_CURRENCY';
 export const REQUEST_API = 'REQUEST_API';
 export const ERROR = 'ERROR';
 export const USER_TOTAL = 'USER_TOTAL';
+export const HANDLE_CHANGE = 'HANDLE_CHANGE';
+export const USER_DELETE = 'USER_DELETE';
 
 export const getEmail = (email) => ({
   type: USER_EMAIL,
@@ -33,6 +35,16 @@ export const getTotal = (total) => ({
 export const errorRequest = (error) => ({
   type: ERROR,
   error,
+});
+
+export const getChange = (payload) => ({
+  type: HANDLE_CHANGE,
+  payload,
+});
+
+export const getDelete = (expenses) => ({
+  type: USER_DELETE,
+  expenses,
 });
 
 export function apiFetch() {

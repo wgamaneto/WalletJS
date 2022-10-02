@@ -1,5 +1,5 @@
 // Esse reducer será responsável por tratar as informações da pessoa usuária
-import { USER_EMAIL, USER_TOTAL } from '../actions';
+import { USER_EMAIL, USER_TOTAL, HANDLE_CHANGE } from '../actions';
 
 const INITIAL_STATE = {
   email: '',
@@ -18,6 +18,13 @@ const user = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       total: soma,
+    };
+  }
+  case HANDLE_CHANGE: {
+    const subtracao = (Number(state.total) - Number(action.payload)).toFixed(2);
+    return {
+      ...state,
+      total: subtracao,
     };
   }
 
